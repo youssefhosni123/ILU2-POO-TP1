@@ -41,11 +41,30 @@ public class Village {
 			 }
 			 return -1;
 		 }
-		 Etal[] trouverEtals(String produit)
+		public  Etal[] trouverEtals(String produit)
 		 {
-			 
-			 
+			 int nombreEtalTrouve=0;
+			 for (int i=0;i<nbEtals;i++)
+			 {
+				 if (etals[i].contientProduit(produit))
+				 {
+					 nombreEtalTrouve++;
+				 }
+			 }
+			 Etal t[]=new Etal[nombreEtalTrouve];
+			 int n=0;
+			 for (int i=0;i<nbEtals;i++)
+			 {
+				 if (etals[i].contientProduit(produit))
+				 {
+					 t[n]=etals[i];
+					 n++;
+				 }
+				 
+			 }
+			 return t; 
 		 }
+		
 		
 	}
 
